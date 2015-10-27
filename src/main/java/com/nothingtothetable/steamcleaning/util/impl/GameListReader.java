@@ -50,7 +50,7 @@ public class GameListReader implements InputReader {
 		
 		if(gameParts.length > 1)
 		{
-			game.setSource(Source.valueOf(gameParts[gameParts.length - 1]));
+			game.setSource(Source.get(gameParts[gameParts.length - 1]));
 			String title = "";
 			StringBuilder sb = new StringBuilder();
 			

@@ -26,11 +26,10 @@ public class GameListReader implements InputReader {
 			while(scanner.hasNextLine())
 			{
 				currLine = scanner.nextLine();
-				System.out.println(currLine);
 				Game test = new Game();
 				createGameFromString(currLine, test);
 				gameList.add(test);
-				System.out.println(test.getTitle() + ", " + test.getSource());
+				//System.out.println(test.getTitle() + ", " + test.getSource());
 			}
 			
 			scanner.close();

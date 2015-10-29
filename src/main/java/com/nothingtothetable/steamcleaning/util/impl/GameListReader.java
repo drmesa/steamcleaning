@@ -27,7 +27,8 @@ public class GameListReader implements InputReader {
 			{
 				currLine = scanner.nextLine();
 				System.out.println(currLine);
-				Game test = createGameFromString(currLine);
+				Game test = new Game();
+				createGameFromString(currLine, test);
 				gameList.add(test);
 				System.out.println(test.getTitle() + ", " + test.getSource());
 			}
@@ -42,11 +43,11 @@ public class GameListReader implements InputReader {
 		return gameList;
 	}
 
-	private Game createGameFromString(String gameString)
+	private Game createGameFromString(String gameString, Game game)
 	{
 		String[] gameParts = gameString.split(",");
 		
-		Game game = new Game();
+		//Game game = new Game();
 		
 		if(gameParts.length > 1)
 		{
@@ -64,6 +65,6 @@ public class GameListReader implements InputReader {
 			game.setTitle(title);
 		}
 		
-		return null;
+		return game;
 	}
 }

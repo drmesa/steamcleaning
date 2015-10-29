@@ -1,6 +1,7 @@
 package com.nothingtothetable.steamcleaning.util.impl;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,23 +13,23 @@ import com.nothingtothetable.steamcleaning.util.InputReader;
 
 public class GameListReader implements InputReader {
 
-	public List<Game> readGameListFile()
+	public List<Game> readGames()
 	{
 		List<Game> gameList = new ArrayList<Game>();
 		//Get file from resources folder
 		ClassLoader classLoader = getClass().getClassLoader();
 		File file = new File(classLoader.getResource("gameList.txt").getFile());
-		
-		try(Scanner scanner = new Scanner(file))
+
+		try(Scanner scanner = new Scanner(new FileInputStream(file), "UTF-8"))
 		{
 			String currLine;
 			
 			while(scanner.hasNextLine())
 			{
 				currLine = scanner.nextLine();
-				Game test = new Game();
-				createGameFromString(currLine, test);
-				gameList.add(test);
+				Game game = new Game();
+				createGameFromString(currLine, game);
+				gameList.add(game);
 				//System.out.println(test.getTitle() + ", " + test.getSource());
 			}
 			

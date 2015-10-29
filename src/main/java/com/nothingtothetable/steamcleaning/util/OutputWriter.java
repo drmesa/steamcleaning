@@ -1,5 +1,9 @@
 package com.nothingtothetable.steamcleaning.util;
 
-public interface OutputWriter {
+import java.util.List;
 
+import com.nothingtothetable.steamcleaning.domain.Game;
+
+public interface OutputWriter {
+	public void writeGames(List<Game> gameList);
 }

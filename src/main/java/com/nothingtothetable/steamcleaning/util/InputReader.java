@@ -5,5 +5,5 @@ import java.util.List;
 import com.nothingtothetable.steamcleaning.domain.Game;
 
 public interface InputReader {
-	public List<Game> readGameListFile();
+	public List<Game> readGames();
 }

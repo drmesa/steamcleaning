@@ -6,6 +6,7 @@ public class Game {
 	private String title;
 	private Source source;
 	private Integer timesPlayed;
+	private Double rating;
 	private Date firstPicked;
 	private Date lastPicked;
 
@@ -37,6 +38,16 @@ public class Game {
 	public void setTimesPlayed(Integer timesPlayed)
 	{
 		this.timesPlayed = timesPlayed;
+	}
+
+	public Double getRating()
+	{
+		return rating;
+	}
+
+	public void setRating(Double rating)
+	{
+		this.rating = rating;
 	}
 
 	public Date getFirstPicked()

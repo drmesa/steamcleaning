@@ -7,6 +7,7 @@ public enum Source {
 	STEAM_DANIEL("Steam(Dan)"),
 	STEAM_DAVID("Steam(David)"),
 	STEAM_LEE("Steam(Lee)"),
+	STEAM_MIN("Steam(Min)"),
 	ORIGIN_DANIEL("Origin(Dan)");
 	
 	private String sourceString;

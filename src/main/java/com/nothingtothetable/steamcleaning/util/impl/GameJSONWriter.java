@@ -25,7 +25,7 @@ public class GameJSONWriter implements OutputWriter {
 			for(Game game : gameList)
 			{
 				String jsonString = createJSONString(game); 
-				System.out.println(jsonString);
+				//System.out.println(jsonString);
 				out.append(jsonString).append("\r\n");	
 			}
 			

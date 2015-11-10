@@ -5,11 +5,11 @@ import java.util.List;
 import java.util.Random;
 
 import com.nothingtothetable.steamcleaning.domain.Game;
+import com.nothingtothetable.steamcleaning.filter.GameFilter;
 import com.nothingtothetable.steamcleaning.util.InputReader;
 import com.nothingtothetable.steamcleaning.util.OutputWriter;
 import com.nothingtothetable.steamcleaning.util.impl.GameJSONReader;
 import com.nothingtothetable.steamcleaning.util.impl.GameJSONWriter;
-import com.nothingtothetable.steamcleaning.util.impl.GameListReader;
 
 public class SteamCleaning {
 
@@ -18,10 +18,18 @@ public class SteamCleaning {
 		
 		List<Game> gamesList = ir.readGames();
 		
-		Random rand = new Random(System.currentTimeMillis());
-		int index = rand.nextInt(gamesList.size());
+		GameFilter filter = new GameFilter();
 		
-		Game selection = gamesList.get(index);
+		filter.setMinPlayed(0);
+		filter.setMaxPlayed(10);
+		filter.setRatingThreshold(0.0);
+		
+		List<Game> filteredList = filter.filter(gamesList);
+		
+		Random rand = new Random(System.currentTimeMillis());
+		int index = rand.nextInt(filteredList.size());
+		
+		Game selection = filteredList.get(index);
 		
 		System.out.println("bzzt");
 		System.out.println("ding!");

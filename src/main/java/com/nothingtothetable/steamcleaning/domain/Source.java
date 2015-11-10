@@ -8,7 +8,8 @@ public enum Source {
 	STEAM_DAVID("Steam(David)"),
 	STEAM_LEE("Steam(Lee)"),
 	STEAM_MIN("Steam(Min)"),
-	ORIGIN_DANIEL("Origin(Dan)");
+	ORIGIN_DANIEL("Origin(Dan)"),
+	BATTLENET_DANIEL("Battle.Net(Dan)");
 	
 	private String sourceString;
 	

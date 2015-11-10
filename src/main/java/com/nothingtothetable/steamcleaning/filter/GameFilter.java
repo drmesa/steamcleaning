@@ -17,7 +17,7 @@ public class GameFilter
 		
 		for(Game game : gameList)
 		{
-			if(passesRatingThreshold(game.getRating()) && inPlayedRange(game.getTimesPlayed()))
+			if(passesRatingThreshold(game) && inPlayedRange(game))
 			{
 				filteredList.add(game);
 			}
@@ -26,14 +26,14 @@ public class GameFilter
 		return filteredList;
 	}
 	
-	private boolean passesRatingThreshold(Double rating)
+	private boolean passesRatingThreshold(Game game)
 	{
-		if(rating == null)
+		if(game.getRating() == null)
 		{
-			rating = 0.0;
+			game.setRating(0.0);
 		}
 		
-		if(rating >= ratingThreshold)
+		if(game.getRating() >= ratingThreshold)
 		{
 			return true;
 		}
@@ -41,14 +41,14 @@ public class GameFilter
 		return false;
 	}
 	
-	private boolean inPlayedRange(Integer timesPlayed)
+	private boolean inPlayedRange(Game game)
 	{
-		if(timesPlayed == null)
+		if(game.getTimesPlayed() == null)
 		{
-			timesPlayed = 0;
+			game.setTimesPlayed(0);
 		}
 		
-		if(timesPlayed >= minPlayed && (maxPlayed == 0 || timesPlayed < maxPlayed))
+		if(game.getTimesPlayed() >= minPlayed && (maxPlayed == 0 || game.getTimesPlayed() < maxPlayed))
 		{
 			return true;
 		}

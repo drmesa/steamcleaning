@@ -30,7 +30,7 @@ public class GameFilter
 	{
 		if(game.getRating() == null)
 		{
-			game.setRating(0.0);
+			game.setRating(0.50);
 		}
 		
 		if(game.getRating() >= ratingThreshold)

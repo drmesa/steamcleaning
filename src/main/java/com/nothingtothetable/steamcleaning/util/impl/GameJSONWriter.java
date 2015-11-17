@@ -20,7 +20,7 @@ public class GameJSONWriter implements OutputWriter {
 		try
 		{
 			File fileDir = new File("F:\\Dan\\gameJSON.txt");
-			Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileDir), "UTF8"));
+			Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fileDir), "UTF-8"));
 			
 			for(Game game : gameList)
 			{
